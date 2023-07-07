@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import "./app.css";
-import reactImg from "./react.png";
+import reactImg from "./assets/react.png";
 
 const App = () => {
 	const [username, setUsername] = useState("");
