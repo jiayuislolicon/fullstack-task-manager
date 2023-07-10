@@ -1,3 +1,7 @@
+/*
+ 處理錯誤訊息的介面
+*/
+
 const { CustomAPIError } = require('../errors/custom-error');
 const errorHandlerMiddleware = (err, req, res, next) => {
   if (err instanceof CustomAPIError) {
