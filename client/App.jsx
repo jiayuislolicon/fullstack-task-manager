@@ -45,16 +45,15 @@ const App = () => {
               className={index !== 0 && 'mt-5'}
               key={`task-${task._id}`}
               handleFinish={(checked) => {
-                updateTask(task._id, { done: checked });
-                getTaskList();
+                updateTask(task._id, { done: checked }).then(() =>
+                  getTaskList()
+                );
               }}
               handleDelete={() => {
-                deleteTask(task._id);
-                getTaskList();
+                deleteTask(task._id).then(() => getTaskList());
               }}
               handleEdit={(name) => {
-                updateTask(task._id, { name });
-                getTaskList();
+                updateTask(task._id, { name }).then(() => getTaskList());
               }}
             />
           ))}
