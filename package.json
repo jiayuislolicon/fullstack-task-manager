@@ -5,8 +5,8 @@
   "repository": "https://github.com/jiayuislolicon/fullstack-task-manager.git",
   "author": "lolicon <lovesyndra@gmail.com>",
   "scripts": {
-    "build": "set NODE_ENV=production webpack --config config/webpack.config.prod.js",
-    "start": "npm run build && node server/index.js",
+    "build": "webpack --config config/webpack.config.prod.js",
+    "start": "concurrently \"npm run build\" \"npm run server\"",
     "client": "webpack serve --config config/webpack.config.dev.js",
     "server": "nodemon server/index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -56,6 +56,7 @@
     "webpack-merge": "^5.9.0"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.1.4",
     "antd": "^5.6.4",
     "express": "^4.18.2",
     "mongoose": "^7.3.2",
